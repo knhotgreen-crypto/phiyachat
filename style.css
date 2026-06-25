@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #ff9ecf, #ff69b4, #ffc0cb, #ffb6c1);
+    background-size: 400% 400%;
+    animation: bgMove 8s ease infinite;
+    color: #333;
+    overflow-x: hidden; /* ป้องกันการเกิดแถบเลื่อนแนวนอนจาก Animation */
+}
+
+/* พื้นหลังเคลื่อนไหว */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    color: white;
+    padding: 30px 20px; /* เพิ่ม padding ซ้าย-ขวาป้องกันตัวหนังสือชิดขอบจอ */
+    text-align: center;
+    animation: fadeDown 1s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.1rem;
+}
+
+section {
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 800px;
+    width: calc(100% - 40px); /* ช่วยให้เว้นระยะขอบสวยงามเมื่อดูในมือถือ */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+    animation: fadeUp 1s ease;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* ควบคุมขนาดไม่ให้หลุดขอบจอ */
+}
+
+section:hover {
+    transform: translateY(-5px) scale(1.01); /* เปลี่ยนจากขยายดื้อๆ เป็นลอยขึ้นเล็กน้อย จะดูนุ่มนวลขึ้นครับ */
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+}
+
+h2 {
+    color: #ff1493;
+    margin-top: 0;
+    border-bottom: 2px solid #ff9ecf; /* เพิ่มเส้นใต้หัวข้อเพื่อความสวยงาม */
+    padding-bottom: 8px;
+}
+
+.project {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 4px solid #ff69b4; /* เพิ่มกิมมิคเส้นข้างหน้ากล่องผลงาน */
+    background: rgba(255, 192, 203, 0.1);
+    border-radius: 0 8px 8px 0;
+}
+
+.project h3 {
+    margin: 0 0 10px;
+    color: #ff69b4;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px; /* เพิ่มระยะห่างระหว่างบรรทัดทักษะให้อ่านง่ายขึ้น */
+}
+
+footer {
+    text-align: center;
+    padding: 20px 10px;
+    background: linear-gradient(90deg, #ff1493, #ff69b4);
+    color: white;
+    margin-top: 40px;
+}
+
+/* ตั้งค่าลิงก์ใน Footer (แก้ไขปัญหาตัวหนังสือกลืนกับพื้นหลัง) */
+footer a {
+    color: #fffb00; /* ใช้สีเหลืองสว่างเพื่อให้ตัดกับพื้นหลังสีชมพูเข้ม */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #ffffff; /* เมื่อเอาเมาส์ชี้ ลิงก์จะเปลี่ยนเป็นสีขาว */
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
